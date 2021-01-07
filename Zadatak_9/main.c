@@ -29,7 +29,6 @@ void printList(Position);
 void printNode(Position);
 
 
-
 int main(void) {
 	Position root = NULL;
 	Position temp = NULL;
@@ -56,13 +55,11 @@ int main(void) {
 	printList(root);
 	temp = findNode(root, 10);
 
-
 	root = deleteNode(root,10);
 
 
 	printList(root);
 	temp = findNode(root, 10);
-
 
 	system("pause");
 	return EXIT_SUCCESS;
