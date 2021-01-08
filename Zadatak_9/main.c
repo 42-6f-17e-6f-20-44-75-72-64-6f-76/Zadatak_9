@@ -31,7 +31,7 @@ int main(void) {
 	if(temp == NULL)
 		printf("\nElement %d nije pronadjen.\n", 10);
 	else
-		printf("\nElement je pronadjen \nvrijednost: %d adresa:\t%p\n", temp->coef, temp);
+		printf("\nElement je pronadjen \nvrijednost: %d adresa:\t0x%08p\n", temp->coef, temp);
 
 
 	root = deleteNode(root,10);
@@ -44,7 +44,7 @@ int main(void) {
 	if (temp == NULL)
 		printf("\nElement %d nije pronadjen.\n", 10);
 	else
-		printf("\nElement je pronadjen \nvrijednost: %d adresa:\t%p\n", temp->coef, temp);
+		printf("\nElement je pronadjen \nvrijednost: %d adresa:\t0x%08p\n", temp->coef, temp);
 
 
 

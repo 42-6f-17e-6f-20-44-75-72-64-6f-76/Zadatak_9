@@ -103,10 +103,6 @@ Position deleteNode(Position root, int coef) {
 
 	return root;
 }
-
-
-
-
 void printList(Position head, int n) {
 	
 
