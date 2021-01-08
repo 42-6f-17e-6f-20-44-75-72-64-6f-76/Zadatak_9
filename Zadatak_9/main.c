@@ -14,13 +14,14 @@ typedef struct _node {
 }Node;
 
 
-
 Position createNode(int);
 Position insertNode(Position, int);
 
+Position deleteTree(Position);
+
 
 Position findNode(Position, int);
-Position findInfinumChild(Position);
+Position findMin(Position);
 
 Position deleteNode(Position, int);
 Position RealDeleteNode(Position);
@@ -61,8 +62,19 @@ int main(void) {
 	printList(root);
 	temp = findNode(root, 10);
 
+	deleteTree(root);
+
 	system("pause");
 	return EXIT_SUCCESS;
+}
+
+Position deleteTree(Position root) {
+	if (root != NULL){
+		root->left  = deleteTree(root->left);
+		root->right = deleteTree(root->right);
+		free(root);
+	}
+	return NULL;
 }
 
 
@@ -180,7 +192,7 @@ Position RealDeleteNode(Position node) {
 	}
 	else if (node->left != NULL && node->right != NULL) {
 
-		temp = findInfinumChild(node->left);
+		temp = findMin(node->left);
 		node->coef = temp->coef;
 		node->left = deleteNode(node->left, temp->coef);
 
@@ -191,13 +203,13 @@ Position RealDeleteNode(Position node) {
 
 
 
-Position findInfinumChild(Position root) {
+Position findMin(Position root) {
 
 	if (root->right == NULL)
 		return root;
 
 
-	return findInfinumChild(root->right);
+	return findMin(root->right);
 
 }
 
